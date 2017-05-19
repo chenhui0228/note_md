@@ -25,3 +25,12 @@
 		git remote add origin git@github.com:yourName/yourRepo.git # 上传
 		git clone https://github.com/username:what.git
 	</pre>
+	
+	- 提交至github
+	<pre>
+		git status
+		git commit -am'commit'
+		git push origin master
+	</pre>
+	
+	
