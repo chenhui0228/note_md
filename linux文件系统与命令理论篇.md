@@ -1,8 +1,9 @@
 # linux文件系统与命令理论篇
 <p>
 linux使用Ext2文件系统，由Superblock,inode,block三个部分构成。
-![](./ext2_filesystem.png) 
 </p>
+
+![](./ext2_filesystem.png) 
 
 - superblock信息记录(一般放在第一个block group内，第二个出现就是想备份)
 	- block与inode总量
@@ -39,4 +40,4 @@ linux使用Ext2文件系统，由Superblock,inode,block三个部分构成。
 	- 1个双间接指向记录
 	- 1个三间接指向记录
 	
-![](/home/haijunt/github/note_md/inode_attr.png) 
+![](./inode_attr.png) 
