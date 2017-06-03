@@ -1,0 +1,19 @@
+# linux命令神器软件命令
+- ag
+- tig
+- mycli
+- jq
+- shellcheck
+- yapf
+- mosh
+- fzf
+- fpp
+- axel
+- sz/rz
+- cloc
+- tmux screen nohup
+- neovim
+- script/scriptreplay
+- you-get
+- pbcopy/pbpaste (mac only)
+- say (mac only)
