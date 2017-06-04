@@ -1,26 +1,57 @@
 # linux文件命令篇
-### 查找文件
+
+### 帮助
 - man
 - help
-- cd
-- popd
-- pushd
-- dirs
+
+### 增
+- touch
+- ln
+- cp
+- mkdir
+- tee
+- dd
+
+### 删
+- rm
+- rmdir
+- unlink
+
+
+### 查(属性inode,内容block)
+- ls
+- lsattr
+- umask
 - pwd
-- tree
-- find
+- dirname
+- basename
+- file
+- stat
+- -umask
+- getfacl
+___
 - updatedb
 - which
 - whereis
 - locate
 - slocate
+- find
 - grep
 - egrep
 - fgrep
-
-
-
-### 显示文件
+- tree
+---
+- cksum
+- spell
+- ispell
+- wc
+- diff
+- diff3
+- diffstat
+- cmp
+- comm
+- pathchk
+___
 - echo
 - look
 - printf
@@ -46,35 +77,23 @@
 - awk
 - > >>
 - col
-
 ___
 - pr
 - fmt
 - rev
 - fold
 
+### 改(属性inode，内容block)
 
-
-### 创建，更改，删除文件
-- nano
-- emacs
-- vim
-- touch
-- ln
-- tee
-- cp
-- mkdir
-- dd
-___
-
+- cd
 - setfacl
-- umask
 - chmod
 - chown
 - chgrp
 - chattr
 - mv
 - rename
+---
 - colrm
 - split
 - csplit
@@ -83,50 +102,22 @@ ___
 - dos2unix
 - iconv
 ___
-
-- unlink
-- rm
-- rmdir
-
-
-### 分析文件
-- ls
-- lsattr
-- pwd
-- dirname
-- basename
-- file
-- stat
-
----
-- cksum
-- spell
-- ispell
-- wc
-- diff
-- diff3
-- diffstat
-- cmp
-- comm
-- pathchk
+- nano
+- emacs
+- vim
 
 
 
-
-### 文件打包
+### 其他
 - tar
 - bzip2
 - gunzip
 - gzip
 
-### 文件备份与恢复
+___
 - cpio
 - restore
 - dump
 
-### 文件传输
-- ftp
-- tftp
-- ncftp
+---
 - scp
-- rcp
