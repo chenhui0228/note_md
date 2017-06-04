@@ -1,6 +1,6 @@
 # linux文件系统与命令理论篇
 <p>
-linux使用Ext2文件系统，由Superblock,inode,block三个部分构成。
+linux使用Ext2文件系统，由boot sector, Superblock, inode bitmap, block bitmap, inode table,block六个部分构成。信息主要有Superblock,inode,block.若要增加日志系统功能，可以使用tune2fs命令快速升级。
 </p>
 
 ![](./ext2_filesystem.png) 
@@ -41,3 +41,21 @@ linux使用Ext2文件系统，由Superblock,inode,block三个部分构成。
 	- 1个三间接指向记录
 	
 ![](./inode_attr.png) 
+
+<p>
+一般创建文件系统到正常使用，需要经过如下几个部分，分区(fdisk),格式化(mkfs),检验(fsck),挂载(mount),自裁(unmount),及自动挂载(vim /etc/fstab),查看linux系统下支持的文件系统(ls -l /lib/modules/$(uname -r)/kernel/fs)及已经挂载的文件系统(cat /proc/filesystems),linux能够支持这么多的文件系统，只要通过中间层虚拟文件系统。
+</p>
+
+### 其它
+- 目录数的连接数为2(./,../)
+- 硬连接
+	- ln  源文件 目标文件
+	- 在某个目录下新建一条文件名连接到某inode号码的文联记录
+	- 不能跨越文件系统
+	- 不能连接目录名
+	- 就是在block下添加一条记录，通常不会增加inode,block(有可能)
+- 软连接(sysmblic link)
+	- ln [-fs] 源文件 目标文件
+	- 创建一个文件，文件的读取指向它连接的那个文件的文件名(等价于windows里的快捷方式)
+	- 会有inode,block
+	- 当源文件删除时，会出现打不到源文件的错误
