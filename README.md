@@ -1,4 +1,7 @@
 # note_md 使用markdown格式存放个人笔记
+
+
+<pre>
 ./
 ├── books
 │   ├── README.md
@@ -37,3 +40,6 @@
     └── README.md
 
 5 directories, 30 files
+
+
+</pre>
