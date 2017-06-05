@@ -5,7 +5,7 @@ echo '\n' >> README.md
 echo '<pre>' >> README.md
 
 cat>>README.md<<EOF
-$(tree -DNt ./)
+$(tree -DNtr ./)
 EOF
 
 echo '\n' >> README.md
