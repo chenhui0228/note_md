@@ -3,41 +3,41 @@
 
 <pre>
 ./
-├── books
-│   ├── README.md
-│   └── 程序员的职业素养.md
-├── get_tree.sh
-├── linux
-│   ├── ext2_filesystem.png
-│   ├── inode_attr.png
-│   ├── kali_tools.md
-│   ├── linux命令神器软件命令.md
-│   ├── linux网络命令篇.md
-│   ├── linux文件命令篇.md
-│   ├── linux文件篇.md
-│   ├── linux文件系统与命令理论篇.md
-│   ├── linux系统管理命令篇.md
-│   └── README.md
-├── python
-│   ├── python_tools.md
-│   ├── python标准库.md
-│   ├── python第三方库.md
-│   ├── python基础.md
-│   ├── README.md
-│   ├── requests总结.md
-│   └── scrapy
-│       ├── scrapy_study.md
-│       ├── scrapy加splash爬取js加载网站.md
-│       ├── scrapy扩展.md
-│       ├── scrapy内建服务.md
-│       ├── scrapy探究.md
-│       ├── 利用Squid实现代理IP服务.md
-│       └── 爬虫框架与产品调研.md
-├── README.md
-└── tools
-    ├── git使用.md
-    ├── markdown操作简介.md
-    └── README.md
+├── [Jun  5 18:32]  books
+│   ├── [Jun  3 15:17]  程序员的职业素养.md
+│   └── [Jun  5 18:32]  README.md
+├── [Jun  5 18:32]  linux
+│   ├── [Jun  5 18:32]  ext2_filesystem.png
+│   ├── [Jun  5 18:32]  inode_attr.png
+│   ├── [Jun  5 18:32]  kali_tools.md
+│   ├── [Jun  5 18:32]  linux命令神器软件命令.md
+│   ├── [Jun  5 18:32]  linux网络命令篇.md
+│   ├── [Jun  5 18:32]  linux文件命令篇.md
+│   ├── [Jun  5 18:32]  linux文件篇.md
+│   ├── [Jun  5 18:32]  linux文件系统与命令理论篇.md
+│   ├── [Jun  5 18:32]  linux系统管理命令篇.md
+│   └── [Jun  5 18:32]  README.md
+├── [Jun  5 18:32]  python
+│   ├── [Jun  5 18:32]  python_tools.md
+│   ├── [Jun  5 18:32]  python标准库.md
+│   ├── [Jun  5 18:32]  python第三方库.md
+│   ├── [Jun  5 18:32]  python基础.md
+│   ├── [Jun  5 18:32]  README.md
+│   ├── [Jun  5 18:32]  requests总结.md
+│   └── [Jun  5 18:32]  scrapy
+│       ├── [Jun  5 18:32]  scrapy_study.md
+│       ├── [Jun  5 18:32]  scrapy加splash爬取js加载网站.md
+│       ├── [Jun  5 18:32]  scrapy扩展.md
+│       ├── [Jun  5 18:32]  scrapy内建服务.md
+│       ├── [Jun  5 18:32]  scrapy探究.md
+│       ├── [Jun  5 18:32]  利用Squid实现代理IP服务.md
+│       └── [Jun  5 18:32]  爬虫框架与产品调研.md
+├── [Jun  5 18:32]  tools
+│   ├── [Jun  5 18:32]  git使用.md
+│   ├── [Jun  5 18:32]  markdown操作简介.md
+│   └── [Jun  5 18:32]  README.md
+├── [Jun  5 19:14]  get_tree.sh
+└── [Jun  5 19:14]  README.md
 
 5 directories, 30 files
 
