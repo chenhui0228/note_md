@@ -1,5 +1,6 @@
 # linux命令神器软件命令
 - ag
+- xsel
 - tig
 - mycli
 - jq
