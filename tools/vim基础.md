@@ -13,7 +13,7 @@
 ### vim使用
 - 操作模式
   - 一般模式 光标移动，复制粘贴，查找替换, 撤消与重做
-    - hjkl,ctrl+fbdu,+-,0$,HML,Ggg
+    - hjkl,ctrl+fbdu,+-,0$^,HML,Ggg
     - xXrRdypc
     - /? n1,n2s/old/new/gc 
     - u,ctrl+r 
