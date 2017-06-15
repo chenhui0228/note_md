@@ -38,13 +38,36 @@ ctrl+w+T # 把当前窗口移到新标签页中
 :tabmove {N} # 重排标签页，移到最后 if N is None else 移到N
 (:tabonly, :tabclose) # 关闭标签页
 </pre>
+
+- 文件打开与保存
+<pre>
+:edit filename
+:edit %Tab	# 当前文件路径
+:edit %:h	# 当前目录路径,可以设置映射项		
+:find filenameTab # 打开打到的文件到缓冲区,需要设置 :set path+=app/**确保在该目录下去find
+:!make -p %:h, :write	# 假如edit的filename并不存在，可以使用shell命令先创建，再保存
+:w !sudo tee % > /dev/null # 可以参考:w !{cmd}, :r !{cmd}等相关命令
+</pre>
+
+- 打开文件管理器
+<pre>
+:edit ., :e.	# 打开文件管理器，并显示当前工作目录
+:Explore, :E	# 打开文件管理器，并显示活动缓冲区所在的目录
+:Sexplore	# 水平切分窗口打开文件管理器
+:Vexplore	# 垂直切分窗口打开文件管理器
+</pre>
+
 ### 快速移动
 ### 查找与替换
 ### 配置支持
 - hhidden
+- cnoremap `<expr>` %% getcmdtype() == ':' ? expand('%:h').'/' : '%%' # 将 %:h`<Tab>` 映射为 '%%'
 
 ### 插件支持
 - unimpaired.vim	# 使用"[", "]"做相关命令的前缀
+- Netrw	# 目录树
+- NERDTree
+- rails.vim	# 智能路径管理，会自动配置'path'
 
 	
 
