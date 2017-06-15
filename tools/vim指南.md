@@ -60,7 +60,7 @@ ctrl+w+T # 把当前窗口移到新标签页中
 ### 快速移动
 ### 查找与替换
 ### 配置支持
-- hhidden
+- hhidden # 设置该属性可以使用:edit!时不用！
 - cnoremap `<expr>` %% getcmdtype() == ':' ? expand('%:h').'/' : '%%' # 将 %:h`<Tab>` 映射为 '%%'
 
 ### 插件支持
@@ -68,7 +68,3 @@ ctrl+w+T # 把当前窗口移到新标签页中
 - Netrw	# 目录树
 - NERDTree
 - rails.vim	# 智能路径管理，会自动配置'path'
-
-	
-
-

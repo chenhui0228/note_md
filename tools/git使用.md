@@ -15,6 +15,7 @@
 
 ### 配置
 - git config --help
+- git config --global core.quotepath false  # 不对0x80以上的字符进行quote, 避免git status/commit 时中文乱码
 
 ### 暂存区
 - git add
