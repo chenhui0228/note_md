@@ -22,9 +22,27 @@
 ### 口决
 - "点范式": 用一键移动，另一键执行
 - "操作": = 操作符+动作命令
+	- 字符命令形式 [{count}=1}]{operator}
+	- 动作命令形式 [{count}=1]{operator}{motion}
+	- 行命令形式 {operator}{operator}
+
+
+### 操作符
+
+<pre>
+- c d y g~ gu gU > < = ! p, ctrl+a, ctrl+x
+- C s S I A o O
+</pre>
+
+### 动作命令
+<pre>
+- h j k l 0 ^ $ gj gk g0 g^ g$
+- iw aw iW aW is iS as aS ip ap i/a ) ] } ' " `>t
+- w W b B e E ge g
+- fFtT ; ,
+</pre>
 
 ### 普通模式
-
 <pre>
 - :h vimtutor
 - f{char}/t{char} ; ,
@@ -35,12 +53,6 @@
 - *, cw, n, ., *nn
 - daw, ciw
 - ctrl+a ctrl+x
-</pre>
-
-### 操作符
-
-<pre>
-- c d y g~ gu gU > < = !
 </pre>
 
 ### 插入模式
