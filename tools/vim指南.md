@@ -68,3 +68,6 @@ ctrl+w+T # 把当前窗口移到新标签页中
 - Netrw	# 目录树
 - NERDTree
 - rails.vim	# 智能路径管理，会自动配置'path'
+- surround.vim
+- vim-ruby
+- vim-bundler
