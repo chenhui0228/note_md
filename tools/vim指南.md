@@ -71,3 +71,4 @@ ctrl+w+T # 把当前窗口移到新标签页中
 - surround.vim
 - vim-ruby
 - vim-bundler
+- commentary.vim # 注释
