@@ -69,7 +69,11 @@
 - :Vexplore	# 垂直切分窗口打开文件管理器
 </pre>
 
-
+- 命令行窗口
+<pre>
+- q:
+- q/
+</pre>
 
 ### 操作符
 
@@ -83,12 +87,24 @@
 - w W b B e E ge g
 - fFtT ; ,
 - / ? # 查找d{motion}
-</pre>
 
 ### 文本对象
 <pre>
 - iw aw iW aW is as ip ap #范围文本对象 单词 串 句子 段落
 - i/a ) ] } ' " `>t # 分隔符对象
+
+
+### 快速跳转
+<pre>
+- m{letter} m{upper}
+- 'letter `letter
+- \`letter
+- '' '. '^ '[ '] '< '> # 跳转之前 修改 插入 修改复制开始 修改复制结束 高亮开始 高亮结束
+- %   # 配置matchit插件更好用
+- :jumps ( ) { } H M L gf ctrl+] # 跳转到上句开头 下名开头 上段开头 下段开头 屏幕上方 中间 下方 光标下文件名 函数定义处(需要配置suffixesadd,path)
+- :changes g; g, gi   # 查看修改列表 跳转到上次修改 回来 跳转到上次插入的行列
+- ctrl+o ctrl+i # 往前跑 往后跳
+</pre>
 </pre>
 
 ### 普通模式
@@ -163,17 +179,6 @@
 ### 插入普通模式
 ### 插入待决模式
 
-### 快速跳转
-<pre>
-- m{letter} m{upper}
-- 'letter `letter
-- \`letter
-- '' '. '^ '[ '] '< '> # 跳转之前 修改 插入 修改复制开始 修改复制结束 高亮开始 高亮结束
-- %   # 配置matchit插件更好用
-- :jumps ( ) { } H M L gf ctrl+] # 跳转到上句开头 下名开头 上段开头 下段开头 屏幕上方 中间 下方 光标下文件名 函数定义处(需要配置suffixesadd,path)
-- :changes g; g, gi   # 查看修改列表 跳转到上次修改 回来 跳转到上次插入的行列
-- ctrl+o ctrl+i # 往前跑 往后跳
-</pre>
 
 ### 寄存器
 <pre>
@@ -208,6 +213,7 @@
 - () %(|) # 分组 不分组
 - \_s #空白符或者换行符
 - \w \W #字母 数字 _ 单词类字符  取反
+- \\e 重复上次查找并到结尾
 </pre>
 
 ### quickfix列表

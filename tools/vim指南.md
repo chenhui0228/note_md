@@ -72,3 +72,5 @@ ctrl+w+T # 把当前窗口移到新标签页中
 - vim-ruby
 - vim-bundler
 - commentary.vim # 注释
+- vim-textobj-lastpat # /i 查找文本对象 n 下一个匹配查找文本对象	
+- vim-visula-star-search # 在可视化下，查找当前选中的文本	
