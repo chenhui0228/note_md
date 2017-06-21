@@ -84,9 +84,10 @@
 ### 动作命令
 <pre>
 - h j k l 0 ^ $ gj gk g0 g^ g$
-- w W b B e E ge g
+- w W b B e E ge gE
 - fFtT ; ,
-- / ? # 查找d{motion}
+- / ? 
+- gg G 50%
 
 ### 文本对象
 <pre>
@@ -96,6 +97,7 @@
 
 ### 快速跳转
 <pre>
+- ctrl+G # 确定当前位置
 - m{letter} m{upper}
 - 'letter `letter
 - \`letter
@@ -105,6 +107,12 @@
 - :changes g; g, gi   # 查看修改列表 跳转到上次修改 回来 跳转到上次插入的行列
 - ctrl+o ctrl+i # 往前跑 往后跳
 </pre>
+</pre>
+
+### 滚屏
+<pre>
+- zz zt zb
+- ctrl+u ctrl+d  ctrl+e ctrl+y
 </pre>
 
 ### 普通模式
