@@ -1,0 +1,218 @@
+" ~/.vimrc
+
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'majutsushi/tagbar'
+nmap <F3> :TagbarToggle<CR>
+
+" Plugin 'tpope/vim-fugitive'
+" Plugin 'tpope/vim-surround'
+" Plugin 'tpope/vim-repeat'
+" Plugin 'tpope/vim-endwise'
+" Plugin 'tpope/vim-unimpaired'
+" Plugin 'godlygeek/tabular'
+" Plugin 'SirVer/ultisnips'
+" Plugin 'honza/vim-snippets'
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+let NERDTreeWinPos='left'
+let NERDTreeWinSize=30
+map <F2> :NERDTreeTabsToggle<CR>
+Plugin 'kien/ctrlp.vim'
+
+Plugin 'thinca/vim-quickrun'
+let g:quickrun_config = {
+\   "_" : {
+\       "outputter" : "message",
+\   },
+\}
+let g:quickrun_no_default_key_mappings = 1
+nmap <Leader>r <Plug>(quickrun)
+map <F5> :QuickRun<CR>
+
+Plugin 'scrooloose/syntastic'
+Plugin 'nvie/vim-flake8'
+let python_highlight_all=1
+syntax on
+
+" Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+" Plugin 'scrooloose/nerdcommenter'
+" Plugin 'pangloss/vim-javascript'
+" Plugin 'Valloric/YouCompleteMe'
+" Plugin 'jiangmiao/auto-pairs'
+" Plugin 'klen/python-mode'
+" Plugin 'plasticboy/vim-markdown'
+" Plugin 'isnowfy/python-vim-instant-markdown'
+
+
+call vundle#end()
+
+" 修改leader键
+let mapleader = ','
+let g:mapleader = ','
+
+filetype plugin indent on
+syntax enable
+syntax on
+" color molokai
+
+set mouse-=a 
+set shortmess=atI
+set nu
+set cindent
+
+set ai
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set shiftround
+set backspace=indent,eol,start
+set whichwrap+=<,>,h,l
+
+" set cursorcolumn
+set cursorline
+
+set ruler
+set showcmd
+set showmode
+set scrolloff=8
+set laststatus=2
+
+set showmatch
+set matchtime=2
+
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+set foldmethod=indent
+set foldlevel=99
+nnoremap <silent>  <Space> za
+
+
+" ===============================================
+" 自定义快捷键设置
+" ===============================================
+map Y y$
+nnoremap <CR> o<Esc>
+
+nnoremap / /\v
+vnoremap / /\v
+
+nnoremap ` '
+nnoremap ' `
+
+map <Left> <Nop>
+map <Right> <Nop>
+map <Up> <Nop>
+map <Down> <Nop>
+
+nnoremap k gk
+nnoremap gk k
+nnoremap j gj
+nnoremap gj j
+
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
+
+
+" 自动缩进及与系统剪切板保持互动，按F4启动paste模式使得不错位,再按F4切回
+" nopaste模式，进入自动缩进的模式
+set smartindent
+set autoindent
+set clipboard=unnamed
+set pastetoggle=<F4>
+
+" 设置<C-a><C-x>默认使用时进制
+set nrformats=
+" 如遇Unicode值大于255的文本，不必等到空格再折行
+set formatoptions+=m
+" 合并两行中文时，不在中间加空格
+set formatoptions+=B
+
+" 插入模式下用绝对行号, 普通模式下用相对
+set relativenumber number
+au FocusLost * :set norelativenumber number
+au FocusGained * :set relativenumber
+autocmd InsertEnter * :set norelativenumber number
+autocmd InsertLeave * :set relativenumber
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set norelativenumber number
+  else
+    set relativenumber
+ endif
+endfunc
+nnoremap <C-n> :call NumberToggle()<cr>
+
+
+" 打开自动定位到最后编辑的位置, 需要确认 .viminfo 当前用户可写 
+set viminfo^=%
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif  
+
+
+" 状态栏改为2行
+set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
+
+" 定义函数AutoSetFileHead，自动插入文件头
+autocmd BufNewFile *.sh,*.py exec ":call AutoSetFileHead()"
+function! AutoSetFileHead()
+    "如果文件类型为.sh文件
+    if &filetype == 'sh'
+        call setline(1, "\#!/bin/bash")
+    endif
+
+    "如果文件类型为python
+    if &filetype == 'python'
+        call setline(1, "\#!/usr/bin/env python")
+        call append(1, "\# encoding: utf-8")
+    endif
+
+    normal G
+    normal o
+    normal o
+endfunc
+
+au BufNewFile, BufRead *.py
+            \ set tabstop=4
+            \ set softtabstop=4
+            \ set shiftwidth=4
+            \ set textwidth=79
+            \ set expandtab
+            \ set autoindent
+            \ set fileformat=unix
+            \ set encoding=utf-8
+
+" 显示行尾多余空格并在保存python文件时删除多余空格
+au BufRead, BufNewFile *.py, *.pyw, *.c, *.h, *.html, *.cpp, *.sh match BadWhitespace /\s\+$/
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+
+" 强制保存
+inoremap w!! w !sudo tee > /dev/null %
