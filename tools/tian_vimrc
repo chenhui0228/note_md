@@ -2,7 +2,7 @@
 
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
@@ -11,6 +11,10 @@ Plugin 'majutsushi/tagbar'
 nmap <F3> :TagbarToggle<CR>
 
 " Plugin 'tpope/vim-fugitive'
+Plugin 'sickill/vim-monokai'
+syntax enable
+colorscheme monokai
+" let g:molokai_original = 1
 " Plugin 'tpope/vim-surround'
 " Plugin 'tpope/vim-repeat'
 " Plugin 'tpope/vim-endwise'
@@ -63,7 +67,6 @@ let g:mapleader = ','
 filetype plugin indent on
 syntax enable
 syntax on
-" color molokai
 
 set mouse-=a 
 set shortmess=atI
