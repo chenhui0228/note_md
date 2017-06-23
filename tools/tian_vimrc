@@ -2,6 +2,11 @@
 
 set nocompatible
 filetype off
+
+" 修改leader键
+let mapleader = ','
+let g:mapleader = ','
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -10,7 +15,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'majutsushi/tagbar'
 nmap <F3> :TagbarToggle<CR>
 
-" Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 Plugin 'sickill/vim-monokai'
 syntax enable
 colorscheme monokai
@@ -21,7 +26,8 @@ set background=dark
 " Plugin 'tpope/vim-repeat'
 " Plugin 'tpope/vim-endwise'
 " Plugin 'tpope/vim-unimpaired'
-" Plugin 'godlygeek/tabular'
+Plugin 'godlygeek/tabular'
+" 使用 :Tab /命令根据符号对齐文本,如:Tab /| Tab/= Tab/:
 " Plugin 'SirVer/ultisnips'
 " Plugin 'honza/vim-snippets'
 
@@ -35,19 +41,19 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'thinca/vim-quickrun'
 let g:quickrun_config = {
 \   "_" : {
-\       "outputter" : "message",
+\       "outputter" : "quickfix",
 \   },
 \}
 let g:quickrun_no_default_key_mappings = 1
+" nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
 nmap <Leader>r <Plug>(quickrun)
-map <F5> :QuickRun<CR>
+map <F9> :QuickRun<CR>
 
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
 let python_highlight_all=1
 syntax on
 
-" Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
@@ -55,15 +61,21 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'terryma/vim-multiple-cursors'
 let g:multi_cursor_use_default_mapping=0
 " Default mapping
-let g:multi_cursor_next_key='<C-m>'
+let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
 
-" Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdcommenter'
+" <leader>cc   加注释
+" <leader>cu   解开注释
+" <leader>c<space>  加上/解开注释, 智能判断
+" <leader>cy   先复制, 再注解(p可以进行黏贴) 注释的时候自动加个空格, 强迫症必配
+let g:NERDSpaceDelims=1
+
 " Plugin 'pangloss/vim-javascript'
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 " Plugin 'jiangmiao/auto-pairs'
 " Plugin 'klen/python-mode'
 " Plugin 'plasticboy/vim-markdown'
@@ -72,9 +84,6 @@ let g:multi_cursor_quit_key='<Esc>'
 
 call vundle#end()
 
-" 修改leader键
-let mapleader = ','
-let g:mapleader = ','
 
 filetype plugin indent on
 syntax enable
@@ -177,7 +186,7 @@ function! NumberToggle()
         set relativenumber
     endif
 endfunc
-nnoremap <C-n> :call NumberToggle()<cr>
+nnoremap <F8> :call NumberToggle()<cr>
 
 
 " 打开自动定位到最后编辑的位置, 需要确认 .viminfo 当前用户可写 
@@ -208,6 +217,18 @@ function! AutoSetFileHead()
     normal o
     normal o
 endfunc
+
+" Add the virtualenv's site-packages to vim path
+py << EOF
+import os.path
+import sys
+import vim
+if 'VIRTUAL_ENV' in os.environ:
+    project_base_dir = os.environ['VIRTUAL_ENV']
+    sys.path.insert(0, project_base_dir)
+    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    execfile(activate_this, dict(__file__=activate_this))
+EOF
 
 au BufNewFile, BufRead *.py
             \ set tabstop=4
