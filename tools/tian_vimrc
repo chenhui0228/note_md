@@ -15,15 +15,17 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'majutsushi/tagbar'
 nmap <F3> :TagbarToggle<CR>
 
-" Plugin 'tpope/vim-fugitive'
-" Plugin 'sickill/vim-monokai'
 syntax enable
-" colorscheme monokai
-" colorscheme solarized
 set background=dark
 
-" Plugin 'tpope/vim-surround'
-" Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+" cs'" 更改
+" ysiw" 为一个单间两头添加"
+" ds' 删除
+" yS yss ysS ySS .
+" Visual s S
+
 " Plugin 'tpope/vim-endwise'
 " Plugin 'tpope/vim-unimpaired'
 Plugin 'godlygeek/tabular'
@@ -36,6 +38,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 let NERDTreeWinPos='left'
 let NERDTreeWinSize=30
 map <F2> :NERDTreeTabsToggle<CR>
+
 Plugin 'kien/ctrlp.vim'
 
 Plugin 'thinca/vim-quickrun'
@@ -49,14 +52,12 @@ let g:quickrun_no_default_key_mappings = 1
 nmap <Leader>r <Plug>(quickrun)
 map <F9> :QuickRun<CR>
 
-Plugin 'scrooloose/syntastic'
-Plugin 'nvie/vim-flake8'
+" Plugin 'nvie/vim-flake8'
 let python_highlight_all=1
 syntax on
 
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-
 
 Plugin 'terryma/vim-multiple-cursors'
 let g:multi_cursor_use_default_mapping=0
@@ -74,18 +75,29 @@ Plugin 'scrooloose/nerdcommenter'
 " <leader>cy   先复制, 再注解(p可以进行黏贴) 注释的时候自动加个空格, 强迫症必配
 let g:NERDSpaceDelims=1
 
-" Plugin 'pangloss/vim-javascript'
+Plugin 'pangloss/vim-javascript'
 Plugin 'Valloric/YouCompleteMe'
-" Plugin 'jiangmiao/auto-pairs'
-" Plugin 'klen/python-mode'
-" Plugin 'plasticboy/vim-markdown'
-" Plugin 'isnowfy/python-vim-instant-markdown'
+
+Plugin 'jiangmiao/auto-pairs'
+
+Plugin 'klen/python-mode'
+filetype indent on
+filetype plugin on  
+autocmd FileType python set omnifunc=pythoncomplete#Complete  
+autocmd FileType javascrīpt set omnifunc=javascriptcomplete#CompleteJS  
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags  
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS  
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags  
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP  
+autocmd FileType c set omnifunc=ccomplete#Complete 
+
+Plugin 'plasticboy/vim-markdown'
+Plugin 'isnowfy/python-vim-instant-markdown'
 
 
 call vundle#end()
 
 
-filetype plugin indent on
 syntax enable
 syntax on
 
@@ -188,6 +200,10 @@ function! NumberToggle()
 endfunc
 nnoremap <F8> :call NumberToggle()<cr>
 
+" au FileType python set omnifunc=pythoncomplete#Complete
+" let g:SuperTabDefaultCompletionType = "context"
+" let g:SuperTabContextDefaultCompletionType = "<c-n>"
+          
 
 " 打开自动定位到最后编辑的位置, 需要确认 .viminfo 当前用户可写 
 set viminfo^=%
@@ -219,7 +235,7 @@ function! AutoSetFileHead()
 endfunc
 
 " Add the virtualenv's site-packages to vim path
-python3 << EOF
+py << EOF
 import os.path
 import sys
 import vim
