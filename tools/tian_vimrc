@@ -15,10 +15,10 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'majutsushi/tagbar'
 nmap <F3> :TagbarToggle<CR>
 
-Plugin 'tpope/vim-fugitive'
-Plugin 'sickill/vim-monokai'
+" Plugin 'tpope/vim-fugitive'
+" Plugin 'sickill/vim-monokai'
 syntax enable
-colorscheme monokai
+" colorscheme monokai
 " colorscheme solarized
 set background=dark
 
@@ -219,7 +219,7 @@ function! AutoSetFileHead()
 endfunc
 
 " Add the virtualenv's site-packages to vim path
-py << EOF
+python3 << EOF
 import os.path
 import sys
 import vim
@@ -251,4 +251,4 @@ endfun
 autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 " 强制保存
-inoremap w!! w !sudo tee > /dev/null %
+cnoremap w!! w !sudo tee > /dev/null %
