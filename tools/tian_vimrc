@@ -50,7 +50,7 @@ let g:quickrun_config = {
 let g:quickrun_no_default_key_mappings = 1
 " nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
 nmap <Leader>r <Plug>(quickrun)
-map <F9> :QuickRun<CR>
+map <F5> :QuickRun<CR>
 
 " Plugin 'nvie/vim-flake8'
 let python_highlight_all=1
@@ -77,6 +77,14 @@ let g:NERDSpaceDelims=1
 
 Plugin 'pangloss/vim-javascript'
 Plugin 'Valloric/YouCompleteMe'
+let g:ycm_complete_in_comments = 1  "在注释输入中也能补全
+let g:ycm_complete_in_strings = 1   "在字符串输入中也能补全
+let g:ycm_collect_identifiers_from_comments_and_strings = 1   "注释和字符串中的文字也会被收入补全
+let g:ycm_collect_identifiers_from_tags_files = 1
+" 开启语法关键字补全
+let g:ycm_seed_identifiers_with_syntax=1
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
 
 Plugin 'jiangmiao/auto-pairs'
 
