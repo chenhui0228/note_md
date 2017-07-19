@@ -35,3 +35,129 @@
     - :before
     - :after
 
+## css定位
+- static: 默认值，即没有定位，元素出现在正常的流中
+- relative: 相对于正常位置的偏移，元素所占空间不会改变
+- absolute: 相对于最近已定位的父元素，与文档流无关，不点空间，会有重叠
+- fixed: 相对于窗口是固定位置，不流动，与文档流无关，不点空间，会有重叠
+
+## css 属性
+- 背影
+    - background
+    - background-attachment
+    - background-color
+    - background-image
+    - background-position
+    - background-repeat
+
+- 文本
+    - color
+    - direction
+    - letter-spacing
+    - line-height
+    - text-align
+    - text-decoration
+    - text-indent
+    - text-shadow
+    - text-transform
+    - unicode-bidi
+    - vertical-align
+    - white-space
+    - word-spacing
+
+- 字体
+    - font
+    - font-family
+    - font-size
+    - font-style
+    - font-variant
+    - font-weight
+
+- 链接
+    - a:link
+    - a:visited
+    - a:hover
+    - a:active
+
+- 列表
+    - list-style
+    - list-style-image
+    - list-style-position
+    - list-style-type
+
+- box
+    - margin
+    - border
+    - padding
+    - content
+    - outline
+
+- 边框
+    - border
+    - border-style
+    - border-width
+    - border-color
+    - border-bottom
+    - border-bottom-color
+    - border-bottom-style
+    - border-bottom-width
+    - border-left
+    - border-left-color
+    - border-left-style
+    - border-left-width
+    - border-right
+    - border-right-color
+    - border-right-style
+    - border-right-width
+    - border-top
+    - border-top-color
+    - border-top-style
+    - border-top-width
+- 轮廓
+    - outline
+    - outline-color
+    - outline-style
+    - outline-width
+
+- 边距
+    - margin
+    - margin-bottom
+    - margin-left
+    - margin-right
+    - margin-top
+
+- 填充
+    - padding
+    - padding-bottom
+    - padding-left
+    - padding-right
+    - padding-top
+
+- 尺寸
+    - height
+    - line-height
+    - max-height
+    - max-width
+    - min-height
+    - min-width
+    - width
+
+- 显示
+    - display
+    - visibility
+
+- 定位
+    - bottom
+    - clip
+    - cursor
+    - left
+    - overflow
+    - overflow-y
+    - overflow-x
+    - position
+    - right
+    - top
+    - z-index
+
+
+
