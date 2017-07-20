@@ -159,5 +159,56 @@
     - top
     - z-index
 
+- 浮动
+    - clear
+    - float
 
+- css伪类
+    - :checked
+    - :disabled
+    - :empty
+    - :enabled
+    - :first-of-type
+    - :in-range
+    - :invalid
+    - :last-of-type
+    - :not(selector)
+    - :nth-child(n)
+    - :nth-last-child(n)
+    - :nth-last-of-type(n)
+    - :nth-of-type(n)
+    - :only-of-type
+    - :only-child
+    - :optional
+    - :out-of-range
+    - :read-only
+    - :read-write
+    - :required
+    - :root
+    - :target
+    - :valid
+    - :link
+    - :visited
+    - :active
+    - :hover
+    - :focus
+    - :first-letter
+    - :first-line
+    - :first-child
+    - :before
+    - :after
+    - :lang(language)
+
+- css伪元素
+    - :link
+    - :visited
+    - :active
+    - :hover
+    - :focus
+    - :first-letter
+    - :first-line
+    - :first-child
+    - :before
+    - :after
+    - lang(language)
 
