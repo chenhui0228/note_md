@@ -14,3 +14,23 @@
 >>> import timeit
 >>> ？
 ```
+
+# 共享文件
+python -m SimpleHTTPServer
+python -m http.server
+
+# 漂亮打印到终端与json
+from pprint import pprint
+cat file.json | python -m json.tools
+
+# 定位性能分析
+python -m cProfile my_script.py
+
+# csv => json
+python -c "import csv,json;print json.dumps(list(csv.reader(open('csv_file'))))"
+
+# 列表辗平
+itertools.chain.from_iterable
+
+# 一行赋值
+self.__dict__.update({k: v for k, v in locals().items()})
