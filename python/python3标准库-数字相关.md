@@ -1,10 +1,11 @@
 # python3标准库-数字相关
-<p>在python3中，数字类型有整数型(int:无限大小)，浮点型(float:2.55 or 2.5e2)，复数型(complex: a+bj or complex(a,b)),对应的标准库为math,cmath就可以很好处理，还包括对三角函数，角度与弧度，双曲函数及特殊的函数计算都支持，直接调用即可。随机数相关的需要参考random模块，分数或者有理数的计算与表示需要fraction模块的支持。如果有高精度浮点运算的需求，比如金融方面的计算，则需要参考decimal模块。</p>
+<p>在python3中，数字类型有整数型(int:无限大小)，浮点型(float:2.55 or 2.5e2)，复数型(complex: a+bj or complex(a,b)),对应的标准库为math,cmath就可以很好处理，还包括对三角函数，角度与弧度，双曲函数及特殊的函数计算都支持，直接调用即可。随机数相关的需要参考random模块，分数或者有理数的计算与表示需要fraction模块的支持。如果有高精度浮点运算的需求，比如金融方面的计算，则需要参考decimal模块。statistics模块提供了多个数值统计函数,如中数，众数，方差，标准差等</p>
 - math
 - cmath
 - random
 - fractions
 - decimal
+- statistics
 
 ### math
 <p>math模块实现了许多对浮点数的数学运算函数. 这些函数一般是对平台 C 库中同名函数的简单封装, 所以一般情况下, 不同平台下计算的结果可能稍微地有所不同, 有时候甚至有很大出入.</p>
@@ -172,4 +173,50 @@ from decimal import *
 str(Decimal('3.40').quantize(Decimal('0.0')))
 # 结果为'3.40'，字符串类型
 
+</pre>
+
+### statistics
+<p>总体方差是我们学习时的标准方差，值是唯一的。而样本方差是从n个里最多选取n-1个进行计算，值有点随机性。只做为评估</p>
+- staticstics.mean(data)  # 平均数 (a+b+...+n)/n
+- staticstics.harmonic_mean(data)  # 调和平均数 n/(1/a + 1/b + ... + 1/n)
+- staticstics.median(data)	# 中位数 (偶数，中位数为中间两位的平均数)
+- staticstics.median_low(data)  # 中位数 (偶数，则较小的)。
+- staticstics.median_high(data)	# 中位数 (偶数，则较大的)。
+- staticstics.median_grouped(data, interval=1) # 使用内插法返回分组连续数据的中值，计算为第50%个数？
+- staticstics.mode(data)	# 众数
+- staticstics.variance(data) # 样本方差 衡量随机变量或一组数据时离散程度的度量。
+- staticstics.pvariance(data, mu=None)  # 总体方差
+- staticstics.stdev(data)	# 样本标准差，sqrt(样本方差）
+- staticstics.pstdev(data, mu=None) # 总体标准差，sqrt(总体方差)
+
+
+<pre>
+>>> mean([1, 2, 3, 4, 4])	# =>2.8
+>>> mean([-1.0, 2.5, 3.25, 5.75])		# =>2.625
+
+>>> from fractions import Fraction as F
+>>> mean([F(3, 7), F(1, 21), F(5, 3), F(1, 3)])  # =>Fraction(13, 21)
+>>> from decimal import Decimal as D
+>>> mean([D("0.5"), D("0.75"), D("0.625"), D("0.375")])  # =>Decimal('0.5625')
+>>> harmonic_mean([2.5, 3, 10])  # 3/(1/2.5 + 1/3 + 1/10)   # =>3.6
+
+>>> median([1, 3, 5])	# =>3
+>>> median([1, 3, 5, 7])	# =>4.0
+>>> median_grouped([52, 52, 53, 54])  # =>52.5 ?
+>>> median_grouped([1, 3, 3, 5, 7], interval=1)  # =>3.25 ?
+>>> median_grouped([1, 3, 3, 5, 7], interval=2)  # =>3.5 ?
+
+>>> mode([1, 1, 2, 3, 3, 3, 3, 4])  # =>3
+>>> mode(["red", "blue", "blue", "red", "green", "red", "red"])  # =>'red'
+
+
+>>> data = [2.75, 1.75, 1.25, 0.25, 0.5, 1.25, 3.5]
+>>> variance(data)  # =>1.3720238095238095
+>>> m = mean(data)
+>>> variance(data, m)  # =>1.3720238095238095
+>>> from decimal import Decimal as D
+>>> variance([D("27.5"), D("30.25"), D("30.25"), D("34.5"), D("41.75")])  # =>Decimal('31.01875')
+>>> from fractions import Fraction as F
+>>> variance([F(1, 6), F(1, 2), F(5, 3)])  # =>Fraction(67, 108)
+>>> pstdev([1.5, 2.5, 2.5, 2.75, 3.25, 4.75])  # =>0.986893273527251
 </pre>
