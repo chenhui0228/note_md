@@ -1,5 +1,5 @@
 # python3标准库-数字相关
-在python3中，数字类型有整数型(int:无限大小)，浮点型(float:2.55 or 2.5e2)，复数型(complex: a+bj or complex(a,b)),对应的标准库为math,cmath就可以很好处理，还包括对三角函数，角度与弧度，双曲函数及特殊的函数计算都支持，直接调用即可。随机数相关的需要参考random模块，分数或者有理数的计算与表示需要fraction模块的支持。如果有高精度浮点运算的需求，比如金融方面的计算，则需要参考decimal模块。statistics模块提供了多个数值统计函数,如中数，众数，方差，标准差等
+数字处理主要有 math,cmath,random,fractions,decimal,statistics 等模块，在python3中，数字类型有整数型(int:无限大小)，浮点型(float:2.55 or 2.5e2)，复数型(complex: a+bj or complex(a,b)),对应的标准库为math,cmath就可以很好处理，还包括对三角函数，角度与弧度，双曲函数及特殊的函数计算都支持，直接调用即可。随机数相关的需要参考random模块，分数或者有理数的计算与表示需要fraction模块的支持。如果有高精度浮点运算的需求，比如金融方面的计算，则需要参考decimal模块。statistics模块提供了多个数值统计函数,如中数，众数，方差，标准差等
 
 - math
 - cmath
