@@ -10,6 +10,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'bling/vim-airline'
 Plugin 'sickill/vim-monokai'
+Plugin 'crusoexia/vim-dracula'
 
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-surround'  "cs.., ds., ys..
@@ -34,8 +35,9 @@ filetype plugin indent on " 开启根据文件类型自动判别缩进
 
 syntax enable
 syntax on
-colorscheme monokai
 set background=dark
+colorscheme dracula
+" colorscheme monokai
 
 let mapleader=","
 let g:mapleader=","
