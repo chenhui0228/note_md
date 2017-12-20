@@ -54,3 +54,4 @@ if __name__ == '__main__':
     print(arr)
     arr = insert_sort(arr)
     print(arr)
+    print('ok')
