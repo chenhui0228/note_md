@@ -41,6 +41,14 @@ let mapleader=","
 let g:mapleader=","
 map <Leader>v :so ~/.vimrc<CR>
 
+if has('clipboard')
+  if has('unnamedplus')  " When possible use + register for copy-paste
+    set clipboard=unnamed,unnamedplus
+  else         " On mac and Windows, use * register for copy-paste
+    set clipboard=unnamed
+  endif
+endif
+
 scriptencoding utf-8
 set tabstop=4
 set expandtab
@@ -171,6 +179,7 @@ let g:ctrlp_user_command = {
 let g:ctrlp_extensions = ['funky']
 nnoremap <Leader>fu :CtrlPFunky<Cr>
 
+set pastetoggle=<F4>
 nnoremap Y y$
 noremap j gj
 noremap k gk
