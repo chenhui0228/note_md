@@ -1,4 +1,5 @@
-#coding: utf8
+# coding: utf8
+
 
 def bubbl_sort(arr=None, arr_len=0):
     if arr is None:
@@ -10,6 +11,7 @@ def bubbl_sort(arr=None, arr_len=0):
             if arr[i] > arr[j]:
                 arr[i], arr[j] = arr[j], arr[i]
     return arr
+
 
 def choice_sort(arr=None, arr_len=0):
     if arr is None:
@@ -25,6 +27,7 @@ def choice_sort(arr=None, arr_len=0):
 
     return arr
 
+
 def insert_sort(arr=None, arr_len=0):
     if arr is None:
         arr = []
@@ -33,7 +36,7 @@ def insert_sort(arr=None, arr_len=0):
     for i in range(1, arr_len):
         old_num = arr[i]
         j = i-1
-        while(j >=0 and arr[j] > old_num):
+        while(j >= 0 and arr[j] > old_num):
             arr[j+1] = arr[j]
             j -= 1
         arr[j+1] = old_num
@@ -43,13 +46,12 @@ def insert_sort(arr=None, arr_len=0):
 if __name__ == '__main__':
     arr = [1, 3, 2, 6, 4, 9]
     print(arr)
-    arr = bubbl_sort(arr,3)
+    arr = bubbl_sort(arr, 3)
     print(arr)
     arr = [1, 4, 2, 9, 5, 7, 6]
     print(arr)
     arr = choice_sort(arr)
     print(arr)
-
     arr = [1, 4, 2, 9, 5, 7, 6]
     print(arr)
     arr = insert_sort(arr)
