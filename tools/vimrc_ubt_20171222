@@ -12,6 +12,7 @@ Plugin 'bling/vim-airline'
 Plugin 'sickill/vim-monokai'
 Plugin 'crusoexia/vim-dracula'
 
+Plugin 'vim-syntastic/syntastic'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-surround'  "cs.., ds., ys..
 Plugin 'tpope/vim-repeat'
@@ -28,8 +29,8 @@ Plugin 'terryma/vim-multiple-cursors'  " ctrl+n, ctrl+p, ctrl+x, Esc
 " Plugin 'plasticboy/vim-markdown'
 Plugin 'pangloss/vim-javascript'
 Plugin 'rizzatti/dash.vim'
-Plugin 'vim-syntastic/syntastic'
 Plugin 'Valloric/YouCompleteMe'  " tab
+Plugin 'python-mode/python-mode'
 
 call vundle#end()
 filetype plugin indent on " 开启根据文件类型自动判别缩进
@@ -53,13 +54,13 @@ if has('clipboard')
 endif
 
 scriptencoding utf-8
+set autoindent
+set smartindent
+set smarttab        " 根据文件中其他地方的缩进空格个数来确定一个 tab 是多少个空格
 set tabstop=4
 set expandtab
 set shiftwidth=4
 set softtabstop=4
-set autoindent
-set smartindent
-set smarttab        " 根据文件中其他地方的缩进空格个数来确定一个 tab 是多少个空格
 set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
 set list  " 开启对于制表符（tab）、行尾空格符（trail）、行结束符（eol）等等特殊符号的回显
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
@@ -125,6 +126,11 @@ let g:bufExplorerUseCurrentWindow=1 " <leader>be, <leader>bv, <leader>bs
 " let g:vim_markdown_folding_disabled = 1
 " let g:vim_markdown_frontmatter=1
 
+let g:pymode_rope_goto_definition_bind = "<C-]>"
+let g:pymode_lint = 0
+let g:pymode_rope = 0
+let g:pymode_folding = 0
+
 nnoremap <Leader>jd :YcmCompleter GoTo<CR>
 let g:acp_enableAtStartup = 0
 " enable completion from tags
@@ -155,11 +161,12 @@ let g:syntastic_style_warning_symbol = "WW"
 let g:syntastic_aggregate_errors=1
 let g:syntastic_python_checkers=['flake8', 'pep8']
 let g:syntastic_python_flake8_exec = 'flake8-python2'
-let g:syntastic_python_flake8_args="--ignore=E501,W601"
-let g:syntastic_python_pep8_args="--ignore=E501,W601"
+let g:syntastic_python_flake8_args="--ignore=E402,E501,W601"
+let g:syntastic_python_pep8_args="--ignore=E402,E501,W601"
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_jump = 1
 let g:syntastic_enable_highlighting=1
+
 
 
 let g:airline_left_sep=''
