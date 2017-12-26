@@ -21,6 +21,7 @@ Plugin 'jlanzarotta/bufexplorer'  " <leader>be, <leader>bv, <leader>bs
 
 Plugin 'SirVer/ultisnips'
 Plugin 'kien/ctrlp.vim'  " ctrl+p, ctrl+j, ctrl+k, ctrl+t, t, Return
+Plugin 'rking/ag.vim'
 Plugin 'honza/vim-snippets'  " ctrl+j, ctrl+k, Esc
 Plugin 'terryma/vim-multiple-cursors'  " ctrl+n, ctrl+p, ctrl+x, Esc
 
@@ -127,6 +128,7 @@ let g:bufExplorerUseCurrentWindow=1 " <leader>be, <leader>bv, <leader>bs
 
 let g:pymode_rope_goto_definition_bind = "<C-]>"
 let g:pymode_lint = 1
+let g:pymode_lint_checkers = ['pyflakes', 'pep8']
 let g:pymode_rope = 0
 let g:pymode_folding = 0
 
