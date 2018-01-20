@@ -67,6 +67,7 @@ set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic white
 set backspace=2     " 解决插入模式下delete/backspce键失效问题
 set backspace=indent,eol,start  " “缩进位置”，“行结束符”，“段首”。这样设置可以使得 backspace 键在这三个特殊的位置也能进行回删动作。
 set shiftround
+set cursorline
 
 set foldmethod=syntax
 set foldopen+=jump
