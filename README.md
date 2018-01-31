@@ -3,17 +3,21 @@
 
 <pre>
 ./
-├── [Jan 10 14:59]  README.md
-├── [Jan 10 10:55]  tools
+├── [Jan 31 13:42]  README.md
+├── [Jan 31 13:41]  think
+│   ├── [Jan 31 13:41]  inspiration.md
+│   ├── [Jan 31 13:35]  2017辞旧迎新.md
+│   └── [Jan 31 13:35]  moon.md
+├── [Jan 31 13:35]  tools
+│   ├── [Jan 31 13:35]  五笔打字.md
+│   ├── [Jan 31 13:35]  vimrc_ubt_20171225
 │   ├── [Jan 10 10:55]  Anaconda安装与配置.md
 │   ├── [Dec 28 16:35]  Rabbitmq.md
-│   ├── [Dec 26 16:25]  vimrc_ubt_20171225
 │   ├── [Dec 25 18:18]  vimrc_ubt_20171222
 │   ├── [Dec 25 10:22]  vimrc_mac_171225
 │   ├── [Dec 20 17:36]  vimrc_2017_12_20
 │   ├── [Dec 15 18:26]  vimrc_20171215
 │   ├── [Dec 14 19:24]  haijunt_vimrc
-│   ├── [Jul  7  2017]  五笔打字.md
 │   ├── [Jun 27  2017]  tian_vimrc
 │   ├── [Jun 23  2017]  terminator_config
 │   ├── [Jun 21  2017]  vim使用问题与解答.md
@@ -25,6 +29,21 @@
 │   ├── [Jun 14  2017]  vim基础.md
 │   ├── [Jun  5  2017]  README.md
 │   └── [May 31  2017]  markdown操作简介.md
+├── [Jan 31 13:35]  linux
+│   ├── [Jan 31 13:35]  ubt1604安装后软件安装文档.md
+│   ├── [Jun 12  2017]  linux命令神器软件命令.md
+│   ├── [Jun 12  2017]  linux文件命令篇.md
+│   ├── [Jun  9  2017]  linux用户管理介绍.md
+│   ├── [Jun  5  2017]  README.md
+│   ├── [Jun  5  2017]  linux文件系统与命令理论篇.md
+│   ├── [Jun  5  2017]  inode_attr.png
+│   ├── [Jun  5  2017]  ext2_filesystem.png
+│   ├── [Jun  1  2017]  linux网络命令篇.md
+│   ├── [May 31  2017]  linux系统管理命令篇.md
+│   ├── [May 31  2017]  linux文件篇.md
+│   └── [May 24  2017]  kali_tools.md
+├── [Jan 11 18:32]  Phabricator_git_review管理平台使用手册.docx
+├── [Jan 11 18:32]  微软云机器管理使用手册.docx
 ├── [Dec 25 20:39]  arithmetic
 │   ├── [Dec 25 20:39]  ex_heapsort_2.py
 │   ├── [Dec 25 20:39]  ex_heapsort.py
@@ -67,21 +86,8 @@
 │   ├── [Jun  5  2017]  程序员的职业素养.md
 │   └── [Jun  5  2017]  README.md
 ├── [Dec  3 18:18]  h5_css3_js
-│   ├── [Jul 20 14:35]  css3.md
+│   ├── [Jul 20  2017]  css3.md
 │   └── [Jul  7  2017]  html5.md
-├── [Nov 23 15:26]  linux
-│   ├── [Nov 23 15:26]  ubt1604安装后软件安装文档.md
-│   ├── [Jun 12  2017]  linux命令神器软件命令.md
-│   ├── [Jun 12  2017]  linux文件命令篇.md
-│   ├── [Jun  9  2017]  linux用户管理介绍.md
-│   ├── [Jun  5  2017]  README.md
-│   ├── [Jun  5  2017]  linux文件系统与命令理论篇.md
-│   ├── [Jun  5  2017]  inode_attr.png
-│   ├── [Jun  5  2017]  ext2_filesystem.png
-│   ├── [Jun  1  2017]  linux网络命令篇.md
-│   ├── [May 31  2017]  linux系统管理命令篇.md
-│   ├── [May 31  2017]  linux文件篇.md
-│   └── [May 24  2017]  kali_tools.md
 ├── [Jun 29  2017]  django_bootstrap分享.pdf
 ├── [Jun 29  2017]  django_bootstrap分享.md
 ├── [Jun 29  2017]  static.jpeg
@@ -95,7 +101,7 @@
 │   └── [Jun  9  2017]  README.md
 └── [Jun  5  2017]  get_tree.sh
 
-9 directories, 82 files
+10 directories, 87 files
 
 
 </pre>
